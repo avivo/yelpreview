@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <title>Yelp Stuff</title>
+    <link rel="stylesheet" type="text/css" href="review.css"/>
+    <style>
+      .desc {
+          color: red;
+          font-size: 2em;
+      }
+    </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"></script>
+    <script type="text/javascript" src="https://github.com/jquery/jquery-tmpl/raw/master/jquery.tmpl.js"></script>
+    <script type="text/javascript" src="http://oauth.googlecode.com/svn/code/javascript/oauth.js"></script>
+    <script type="text/javascript" src="http://oauth.googlecode.com/svn/code/javascript/sha1.js"></script>
+    <script type="text/javascript" src='yelpreview.js'></script>
+    <script>
+      $(document).ready(function(){
+        //Load directly specifying keys
+        $('#without_saved_defaults').yelpReviews({
+          biz: 'owl-tree-san-francisco-2',
+          consumerKey: "YOUR_CONSUMER_KEY",
+          consumerSecret: "YOUR_CONSUMER_SECRET",
+          accessToken: "YOUR_TOKEN",
+          accessTokenSecret: "YOUR_TOKEN_SECRET"
+        });
+        
+        //Save defaults
+        $.extend($.fn.yelpReviews.defaults, {
+          consumerKey: "YOUR_CONSUMER_KEY",
+          consumerSecret: "YOUR_CONSUMER_SECRET",
+          accessToken: "YOUR_TOKEN",
+          accessTokenSecret: "YOUR_TOKEN_SECRET"
+        })
+        $('#with_saved_defaults').yelpReviews({
+          biz: 'owl-tree-san-francisco-2'
+        });
+        
+        //Use inline template
+        $('#with_inline_template').yelpReviews({
+          biz: 'owl-tree-san-francisco-2',
+          reviewTemplateMarkup: "<div class='yelp-review-body'>${excerpt}</div>"
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class='desc'>
+      Without saved defaults:
+    </div>
+    <div id='without_saved_defaults'>
+    </div>
+    <div class='desc'>
+      With saved defaults:
+    </div>
+    <div id='with_saved_defaults'>
+    </div>
+    <div class='desc'>
+      With inline template:
+    </div>
+    <div id='with_inline_template'>
+    </div>
+  </body>
+</html>

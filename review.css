@@ -1,0 +1,17 @@
+.yelp-review {
+    font-family: Arial, 'Helvetica Neue', sans-serif;
+    width: 550px;
+}
+
+.yelp-excerpt .yelp-review-footer {
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+.yelp-user-name {
+    color: gray;
+}
+
+.yelp-date {
+    color: gray;
+}
