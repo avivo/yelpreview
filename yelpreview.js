@@ -92,10 +92,10 @@
   }
   
   $.fn.yelpReviews.defaults = {
-    consumerKey: "YOUR_CONSUMER_KEY",
-    consumerSecret: "YOUR_CONSUMER_SECRET",
-    accessToken: "YOUR_TOKEN",
-    accessTokenSecret: "YOUR_TOKEN_SECRET",
+    consumerKey: "",
+    consumerSecret: "",
+    accessToken: "",
+    accessTokenSecret: "",
     signatureMethod: "HMAC-SHA1",
     reviewTemplateMarkupFile: "review.tmpl",
     reviewTemplateMarkup: null,
